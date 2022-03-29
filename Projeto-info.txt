@@ -9,3 +9,8 @@ Relação de vendas:
 
 
 ==========================================================================================
+
+Configurações do servidor
+Software:
+  .Para a utilização de um banco, foi decidido utilizar o software Apache Tomcat.
+  .Decisão feita com base na maior facilidade de integrar o banco com a linguagem Java no back-end
