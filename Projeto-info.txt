@@ -1,0 +1,11 @@
+Regras de Negócio da aplicação
+Classe Produto:
+  .Criar codigo unico para reconher o tipo e categoria do produto
+  .Definir variaveis para manipulação de preço 
+  .Métodos para manipulação e alteração dos produtos
+
+Relação de vendas:
+- A definir...
+
+
+==========================================================================================
