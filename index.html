@@ -1,33 +1,391 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>LEDs Informática</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/led.ico" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
   </head>
   <body>
     <!-- HEADER -->
-    <!-- TOP NAVBAR -->
-    <!-- FIM TOP NAVBAR -->
-    <!-- SIDE NAVBAR -->
-
-    <!-- FIM SIDE NAVBAR -->
+    <header>
+      <!-- TOP NAVBAR -->
+      <nav class="top-nav hide-on-med-and-down blue lighten-4">
+        <div class="container-led">
+          <div class="nav-wrapper">
+            <div class="row">
+              <h1 class="header blue-text">Produtos</h1>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="divider"></div>
+      <div class="navbar-fixed hide-on-large-only blue lighten-4">
+        <nav class="top-nav" id="topnav-mobile">
+          <a href="#" data-target="slide-out" class="sidenav-trigger"
+            ><i
+              class="blue-text material-icons hide-on-large-only"
+              id="menu_icon"
+              >menu</i
+            ></a
+          >
+          <div class="container">
+            <div class="nav-wrapper">
+              <div class="row">
+                <h1 class="header flow-text blue-text">LEDs Info</h1>
+                <h1 class="header flow-text blue-text">Produtos</h1>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="divider"></div>
+      </div>
+      <!-- FIM TOP NAVBAR -->
+      <!-- SIDE NAVBAR -->
+      <div class="container">
+        <ul
+          class="sidenav sidenav-fixed blue lighten-4"
+          id="slide-out"
+          style="text-align: left"
+        >
+          <div class="logo center">
+            <a id="logo-container" href="index.html"
+              ><img src="./img/led2.png" style="height: 150px"
+            /></a>
+          </div>
+          <div class="divider"></div>
+          <li class="center">
+            <span class="flow-text blue-text">LEDs Info</span>
+          </li>
+          <li class="search">
+            <div class="search-wrapper">
+              <input
+                id="search"
+                placeholder="Pesquisar..."
+                class="blue lighten-1"
+              />
+              <i class="material-icons" id="search_icon">search</i>
+              <div class="search-results"></div>
+            </div>
+          </li>
+          <li class="active">
+            <a href="./index.html"
+              >Produtos<i class="material-icons blue-text">inventory_2</i></a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- FIM SIDE NAVBAR -->
+    </header>
     <!-- FIM HEADER -->
 
     <!-- MAIN -->
-    <!-- CARD -->
-
-    <!-- FIM CARD -->
-
+    <main class="blue lighten-2">
+      <!-- COLOCAR CARROSEL JS -->
+      <div class="divider"></div>
+      <div class="container-led">
+        <div class="row">
+          <!-- CARD -->
+          <div class="col s12 m4">
+            <div class="card" style="height: 700px">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="responsive-img" src="./img/prod1.png" />
+              </div>
+              <div class="card-content">
+                <span
+                  class="card-title activator grey-text text-darken-4 truncate"
+                  id="title_card"
+                  >Acer Chromebook 515</span
+                >
+                <p>
+                  equipado com um processador1 Intel® Core™ i7 da 11a geração, o
+                  Acer Chromebook 515 e seu grande monitor Full HD de 15,6.
+                </p>
+                <br />
+                <p><strong>R$ 1.700,00</strong></p>
+                <div class="center">
+                  <i class="material-icons prefix blue-text">shopping_basket</i>
+                  <div class="input-field inline">
+                    <input type="number" class="center" step="1" id="qtd1" />
+                  </div>
+                </div>
+                <div class="card-action center">
+                  <a
+                    class="btn blue waves-effect waves-light"
+                    id="adicionar1"
+                    id="produto1"
+                    onclick="if (document.getElementById('qtd1').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Acer Chromebook 515', document.getElementById('qtd1').value, '1700.00', 1 )}"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM CARD -->
+          <!-- CARD -->
+          <div class="col s12 m4">
+            <div class="card" style="height: 700px">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img
+                  class="responsive-img"
+                  src="./img/prod2.png"
+                  style="width: 430px; padding-left: 70px"
+                />
+              </div>
+              <div class="card-content">
+                <span
+                  class="card-title activator grey-text text-darken-4 truncate"
+                  >Memória Corsair Vengeance</span
+                >
+                <p>
+                  A memória VENGEANCE foi projetada para overclocking de alto
+                  desempenho. O dissipador de calor é feito de alumínio puro.
+                </p>
+                <br />
+                <p><strong>R$ 599,99</strong></p>
+                <div class="center">
+                  <i class="material-icons prefix blue-text">shopping_basket</i>
+                  <div class="input-field inline">
+                    <input type="number" class="center" step="1" id="qtd2" />
+                  </div>
+                </div>
+                <div class="card-action center">
+                  <a
+                    class="btn blue waves-effect waves-light"
+                    id="adicionar2"
+                    id="produto2"
+                    onclick="if (document.getElementById('qtd2').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Memória Corsair Vengeance', document.getElementById('qtd2').value, '599.99', 2 )}"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM CARD -->
+          <!-- CARD -->
+          <div class="col s12 m4">
+            <div class="card" style="height: 700px">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img
+                  class="responsive-img"
+                  src="./img/prod3.png"
+                  style="width: 460px; padding-left: 60px"
+                />
+              </div>
+              <div class="card-content">
+                <span
+                  class="card-title activator grey-text text-darken-4 truncate"
+                  >Intel® Core™ i7</span
+                >
+                <p>
+                  Os processadores compatíveis com a computação de 64 bits na
+                  arquitetura Intel® requerem BIOS habilitados para arquitetura
+                  Intel 64.
+                </p>
+                <br />
+                <p><strong>R$ 1.699,99</strong></p>
+                <div class="center">
+                  <i class="material-icons prefix blue-text">shopping_basket</i>
+                  <div class="input-field inline">
+                    <input type="number" class="center" step="1" id="qtd3" />
+                  </div>
+                </div>
+                <div class="card-action center">
+                  <a
+                    class="btn blue waves-effect waves-light"
+                    id="adicionar3"
+                    id="produto3"
+                    onclick="if (document.getElementById('qtd3').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Intel® Core™ i7', document.getElementById('qtd3').value, '1699.99', 3 )}"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM CARD -->
+          <!-- CARD -->
+          <div class="col s12 m4">
+            <div class="card" style="height: 700px">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img
+                  class="responsive-img"
+                  src="./img/prod4.png"
+                  style="width: 450px"
+                />
+              </div>
+              <div class="card-content">
+                <span
+                  class="card-title activator grey-text text-darken-4 truncate"
+                  >Radeon R9 290X GAMING 4G</span
+                >
+                <p>
+                  Uma placa de vídeo é o elemento mais importante para ter mais
+                  quadros por segundo (QPS). Como gamers, achamos que não
+                  qualquer placa de vídeo pode fazer o trabalho.
+                </p>
+                <br />
+                <p><strong>R$ 1099,99</strong></p>
+                <div class="center">
+                  <i class="material-icons prefix blue-text">shopping_basket</i>
+                  <div class="input-field inline">
+                    <input type="number" class="center" step="1" id="qtd4" />
+                  </div>
+                </div>
+                <div class="card-action center">
+                  <a
+                    class="btn blue waves-effect waves-light"
+                    id="adicionar4"
+                    id="produto4"
+                    onclick="if (document.getElementById('qtd4').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Radeon R9 290X GAMING 4G', document.getElementById('qtd4').value, '1099.99', 4 )}"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM CARD -->
+          <!-- CARD -->
+          <div class="col s12 m4">
+            <div class="card" style="height: 700px">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img
+                  class="responsive-img"
+                  src="./img/prod5.png"
+                  style="width: 430px"
+                />
+              </div>
+              <div class="card-content">
+                <span
+                  class="card-title activator grey-text text-darken-4 truncate"
+                  >Satellite L45-ASP4202FL</span
+                >
+                <p>
+                  Capacidade total de armazenagem: 750 GB, Armazenamento: HDD,
+                  Tipo de drive ótico: DVD Super Multi. Modelo de adaptador
+                  gráfico a bordo: Intel® HD Graphics 4400.
+                </p>
+                <br />
+                <p><strong>R$ 1299,99</strong></p>
+                <div class="center">
+                  <i class="material-icons prefix blue-text">shopping_basket</i>
+                  <div class="input-field inline">
+                    <input type="number" class="center" step="1" id="qtd5" />
+                  </div>
+                </div>
+                <div class="card-action center">
+                  <a
+                    class="btn blue waves-effect waves-light"
+                    id="adicionar5"
+                    id="produto5"
+                    onclick="if (document.getElementById('qtd5').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Satellite L45-ASP4202FL', document.getElementById('qtd5').value, '1299.99', 5 )}"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM CARD -->
+          <!-- CARD -->
+          <div class="col s12 m4" style="height: 700px">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img
+                  class="responsive-img"
+                  src="./img/prod6.png"
+                  style="width: 285px; margin-left: 50px"
+                />
+              </div>
+              <div class="card-content">
+                <span
+                  class="card-title activator grey-text text-darken-4 truncate"
+                  >HYPER 212 EVO</span
+                >
+                <p>
+                  O desempenho de resfriamento bem balanceado fornece
+                  otimizações de aletas com equilíbrio perfeito entre operações
+                  de alta e baixa velocidade.
+                </p>
+                <br />
+                <p><strong>R$ 389,99</strong></p>
+                <div class="center">
+                  <i class="material-icons prefix blue-text">shopping_basket</i>
+                  <div class="input-field inline">
+                    <input type="number" class="center" step="1" id="qtd6" />
+                  </div>
+                </div>
+                <div class="card-action center">
+                  <a
+                    class="btn blue waves-effect waves-light"
+                    id="adicionar6"
+                    id="produto6"
+                    onclick="if (document.getElementById('qtd6').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('HYPER 212 EVO', document.getElementById('qtd6').value, '389.99', 6 )}"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIM CARD -->
+        </div>
+      </div>
+    </main>
     <!-- FIM MAIN -->
 
     <!-- FOOTER -->
-
+    <div class="divider"></div>
+    <footer class="page-footer transparent blue lighten-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <img src="./img/led.ico" />
+            <p class="blue-text">
+              Uma empresa com os produtos de maior qualidade do mercado.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="blue-text">Links</h5>
+            <ul>
+              <li>
+                <a class="blue-text" href="https://facebook.com/">Facebook</a>
+              </li>
+              <li>
+                <a class="blue-text" href="https://instagram.com/">Instagram</a>
+              </li>
+              <li>
+                <a class="blue-text" href="https://br.linkedin.com/"
+                  >Linkedin</a
+                >
+              </li>
+              <li>
+                <a class="blue-text" href="https://twitter.com/">Twitter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container blue-text container-led">
+          © 2021 Copyright LEDs Info
+        </div>
+      </div>
+    </footer>
     <!-- FIM FOOTER -->
 
     <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <!--MENU MOBILE-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
