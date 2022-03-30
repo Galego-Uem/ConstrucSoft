@@ -126,7 +126,6 @@
                     class="btn blue waves-effect waves-light"
                     id="adicionar1"
                     id="produto1"
-                    onclick="if (document.getElementById('qtd1').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Acer Chromebook 515', document.getElementById('qtd1').value, '1700.00', 1 )}"
                     >Comprar</a
                   >
                 </div>
@@ -166,7 +165,6 @@
                     class="btn blue waves-effect waves-light"
                     id="adicionar2"
                     id="produto2"
-                    onclick="if (document.getElementById('qtd2').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Memória Corsair Vengeance', document.getElementById('qtd2').value, '599.99', 2 )}"
                     >Comprar</a
                   >
                 </div>
@@ -207,7 +205,6 @@
                     class="btn blue waves-effect waves-light"
                     id="adicionar3"
                     id="produto3"
-                    onclick="if (document.getElementById('qtd3').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Intel® Core™ i7', document.getElementById('qtd3').value, '1699.99', 3 )}"
                     >Comprar</a
                   >
                 </div>
@@ -248,7 +245,6 @@
                     class="btn blue waves-effect waves-light"
                     id="adicionar4"
                     id="produto4"
-                    onclick="if (document.getElementById('qtd4').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Radeon R9 290X GAMING 4G', document.getElementById('qtd4').value, '1099.99', 4 )}"
                     >Comprar</a
                   >
                 </div>
@@ -289,7 +285,6 @@
                     class="btn blue waves-effect waves-light"
                     id="adicionar5"
                     id="produto5"
-                    onclick="if (document.getElementById('qtd5').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Satellite L45-ASP4202FL', document.getElementById('qtd5').value, '1299.99', 5 )}"
                     >Comprar</a
                   >
                 </div>
@@ -330,7 +325,6 @@
                     class="btn blue waves-effect waves-light"
                     id="adicionar6"
                     id="produto6"
-                    onclick="if (document.getElementById('qtd6').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('HYPER 212 EVO', document.getElementById('qtd6').value, '389.99', 6 )}"
                     >Comprar</a
                   >
                 </div>
@@ -387,5 +381,22 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      //MENU MOBILE
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+        $(".carousel").carousel({
+          dist: 0,
+          padding: 0,
+          fullWidth: true,
+          indicators: true,
+          duration: 100,
+        });
+        setInterval(function () {
+          $("#carousel1").carousel("next");
+        }, 4500);
+      });
+    </script>
   </body>
 </html>
