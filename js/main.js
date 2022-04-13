@@ -55,6 +55,22 @@ function login() {
   }
 }
 
+function Cadastro() {
+  if (
+    document.getElementById("usuario").value == "" ||
+    document.getElementById("senha").value == "" ||
+    document.getElementById("Csenha").value == "" ||
+    document.getElementById("senha").value !=
+      document.getElementById("Csenha").value
+  ) {
+    alert("Dados Inválidos");
+    return;
+  } else {
+    alert("Login realizado com sucesso!");
+    return (window.location.href = "user.html");
+  }
+}
+
 function pedido() {
   if (
     document.getElementById("total").innerHTML == "" ||
