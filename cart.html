@@ -26,7 +26,7 @@
         <div class="container-led">
           <div class="nav-wrapper">
             <div class="row">
-              <h1 class="header blue-text">Produtos</h1>
+              <h1 class="header blue-text">Carrinho de Compras</h1>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
             <div class="nav-wrapper">
               <div class="row">
                 <h1 class="header flow-text blue-text">LEDs Info</h1>
-                <h1 class="header flow-text blue-text">Produtos</h1>
+                <h1 class="header flow-text blue-text">Carrinho de Compras</h1>
               </div>
             </div>
           </div>
@@ -85,12 +85,12 @@
               >Entrar<i class="material-icons blue-text">login</i></a
             >
           </li>
-          <li class="active">
+          <li>
             <a href="./index.html"
               >Produtos<i class="material-icons blue-text">inventory_2</i></a
             >
           </li>
-          <li>
+          <li class="active">
             <a href="./cart.html"
               >Carrinho de Compras<i class="material-icons blue-text"
                 >shopping_cart</i
@@ -112,268 +112,112 @@
 
     <!-- MAIN -->
     <main class="blue lighten-2">
-      <div class="center" style="border: 10px solid">
-        <div
-          class="carousel carousel-slider"
-          id="carousel1"
-          style="height: 800px"
-        >
-          <a class="carousel-item" href="#one!"
-            ><img src="./img/note1.jpg"
-          /></a>
-          <a class="carousel-item" href="#two!"
-            ><img src="./img/note2.jpg"
-          /></a>
-          <a class="carousel-item" href="#three!"
-            ><img src="./img/note3.jpg"
-          /></a>
-        </div>
-      </div>
-      <div class="divider"></div>
       <div class="container-led">
-        <div class="row">
-          <!-- CARD -->
-          <div class="col s12 m4">
-            <div class="card" style="height: 700px">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="responsive-img" src="./img/prod1.png" />
-              </div>
-              <div class="card-content">
-                <span
-                  class="card-title activator grey-text text-darken-4 truncate"
-                  id="title_card"
-                  >Acer Chromebook 515</span
-                >
-                <p>
-                  equipado com um processador1 Intel® Core™ i7 da 11a geração, o
-                  Acer Chromebook 515 e seu grande monitor Full HD de 15,6.
-                </p>
-                <br />
-                <p><strong>R$ 1.700,00</strong></p>
-                <div class="center">
-                  <i class="material-icons prefix blue-text">shopping_basket</i>
-                  <div class="input-field inline">
-                    <input type="number" class="center" step="1" id="qtd1" />
-                  </div>
-                </div>
-                <div class="card-action center">
+        <div style="overflow-x: auto">
+          <!-- TABLE -->
+          <table class="highlight centered">
+            <thead>
+              <tr>
+                <th class="flow-text black-text">Produto</th>
+                <th class="flow-text black-text">Quantidade</th>
+                <th class="flow-text black-text">Preço</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <!-- PRODUTO -->
+                <td><span id="title_cart"></span></td>
+                <!-- FIM PRODUTO -->
+                <!-- QUANTIDADE -->
+                <td><span id="qntd_cart"></span></td>
+                <!-- FIM QUANTIDADE -->
+                <!-- PRECO -->
+                <td><span id="prc"></span></td>
+                <!-- FIM PRECO -->
+                <!-- BOTAO EXCLUIR -->
+                <td>
                   <a
-                    class="btn blue waves-effect waves-light"
-                    id="adicionar1"
-                    id="produto1"
-                    onclick="if (document.getElementById('qtd1').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Acer Chromebook 515', document.getElementById('qtd1').value, '1700.00', 1 )}"
-                    >Comprar</a
+                    href="#"
+                    class="btn white modal-trigger blue lighten-1"
+                    data-target="modal1"
+                    ><i class="material-icons red-text">delete</i></a
+                  >
+                </td>
+                <!-- FIM BOTAO EXCLUIR -->
+              </tr>
+              <!-- MODAL POPUP EXCLUIR PRODUTO DO CARRINHO -->
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Excluir Item do Carrinho</h4>
+                  <p>Deseja mesmo excluir esse item do carrinho de compras?</p>
+                </div>
+                <div class="modal-footer">
+                  <a
+                    href="#!"
+                    class="modal-close waves-effect waves-light btn red"
+                    style="margin-right: 100px; width: 100px"
+                    onclick="limpaCarrinho()"
+                    >Excluir</a
+                  >
+                  <a
+                    href="#!"
+                    class="modal-close waves-effect waves-light btn blue"
+                    style="width: 100px"
+                    >Não</a
                   >
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- FIM CARD -->
-          <!-- CARD -->
-          <div class="col s12 m4">
-            <div class="card" style="height: 700px">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img
-                  class="responsive-img"
-                  src="./img/prod2.png"
-                  style="width: 430px; padding-left: 70px"
-                />
-              </div>
-              <div class="card-content">
-                <span
-                  class="card-title activator grey-text text-darken-4 truncate"
-                  >Memória Corsair Vengeance</span
-                >
-                <p>
-                  A memória VENGEANCE foi projetada para overclocking de alto
-                  desempenho. O dissipador de calor é feito de alumínio puro.
-                </p>
-                <br />
-                <p><strong>R$ 599,99</strong></p>
-                <div class="center">
-                  <i class="material-icons prefix blue-text">shopping_basket</i>
-                  <div class="input-field inline">
-                    <input type="number" class="center" step="1" id="qtd2" />
-                  </div>
-                </div>
-                <div class="card-action center">
-                  <a
-                    class="btn blue waves-effect waves-light"
-                    id="adicionar2"
-                    id="produto2"
-                    onclick="if (document.getElementById('qtd2').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Memória Corsair Vengeance', document.getElementById('qtd2').value, '599.99', 2 )}"
-                    >Comprar</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- FIM CARD -->
-          <!-- CARD -->
-          <div class="col s12 m4">
-            <div class="card" style="height: 700px">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img
-                  class="responsive-img"
-                  src="./img/prod3.png"
-                  style="width: 460px; padding-left: 60px"
-                />
-              </div>
-              <div class="card-content">
-                <span
-                  class="card-title activator grey-text text-darken-4 truncate"
-                  >Intel® Core™ i7</span
-                >
-                <p>
-                  Os processadores compatíveis com a computação de 64 bits na
-                  arquitetura Intel® requerem BIOS habilitados para arquitetura
-                  Intel 64.
-                </p>
-                <br />
-                <p><strong>R$ 1.699,99</strong></p>
-                <div class="center">
-                  <i class="material-icons prefix blue-text">shopping_basket</i>
-                  <div class="input-field inline">
-                    <input type="number" class="center" step="1" id="qtd3" />
-                  </div>
-                </div>
-                <div class="card-action center">
-                  <a
-                    class="btn blue waves-effect waves-light"
-                    id="adicionar3"
-                    id="produto3"
-                    onclick="if (document.getElementById('qtd3').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Intel® Core™ i7', document.getElementById('qtd3').value, '1699.99', 3 )}"
-                    >Comprar</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- FIM CARD -->
-          <!-- CARD -->
-          <div class="col s12 m4">
-            <div class="card" style="height: 700px">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img
-                  class="responsive-img"
-                  src="./img/prod4.png"
-                  style="width: 450px"
-                />
-              </div>
-              <div class="card-content">
-                <span
-                  class="card-title activator grey-text text-darken-4 truncate"
-                  >Radeon R9 290X GAMING 4G</span
-                >
-                <p>
-                  Uma placa de vídeo é o elemento mais importante para ter mais
-                  quadros por segundo (QPS). Como gamers, achamos que não
-                  qualquer placa de vídeo pode fazer o trabalho.
-                </p>
-                <br />
-                <p><strong>R$ 1099,99</strong></p>
-                <div class="center">
-                  <i class="material-icons prefix blue-text">shopping_basket</i>
-                  <div class="input-field inline">
-                    <input type="number" class="center" step="1" id="qtd4" />
-                  </div>
-                </div>
-                <div class="card-action center">
-                  <a
-                    class="btn blue waves-effect waves-light"
-                    id="adicionar4"
-                    id="produto4"
-                    onclick="if (document.getElementById('qtd4').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Radeon R9 290X GAMING 4G', document.getElementById('qtd4').value, '1099.99', 4 )}"
-                    >Comprar</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- FIM CARD -->
-          <!-- CARD -->
-          <div class="col s12 m4">
-            <div class="card" style="height: 700px">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img
-                  class="responsive-img"
-                  src="./img/prod5.png"
-                  style="width: 430px"
-                />
-              </div>
-              <div class="card-content">
-                <span
-                  class="card-title activator grey-text text-darken-4 truncate"
-                  >Satellite L45-ASP4202FL</span
-                >
-                <p>
-                  Capacidade total de armazenagem: 750 GB, Armazenamento: HDD,
-                  Tipo de drive ótico: DVD Super Multi. Modelo de adaptador
-                  gráfico a bordo: Intel® HD Graphics 4400.
-                </p>
-                <br />
-                <p><strong>R$ 1299,99</strong></p>
-                <div class="center">
-                  <i class="material-icons prefix blue-text">shopping_basket</i>
-                  <div class="input-field inline">
-                    <input type="number" class="center" step="1" id="qtd5" />
-                  </div>
-                </div>
-                <div class="card-action center">
-                  <a
-                    class="btn blue waves-effect waves-light"
-                    id="adicionar5"
-                    id="produto5"
-                    onclick="if (document.getElementById('qtd5').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('Satellite L45-ASP4202FL', document.getElementById('qtd5').value, '1299.99', 5 )}"
-                    >Comprar</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- FIM CARD -->
-          <!-- CARD -->
-          <div class="col s12 m4" style="height: 700px">
-            <div class="card">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img
-                  class="responsive-img"
-                  src="./img/prod6.png"
-                  style="width: 285px; margin-left: 50px"
-                />
-              </div>
-              <div class="card-content">
-                <span
-                  class="card-title activator grey-text text-darken-4 truncate"
-                  >HYPER 212 EVO</span
-                >
-                <p>
-                  O desempenho de resfriamento bem balanceado fornece
-                  otimizações de aletas com equilíbrio perfeito entre operações
-                  de alta e baixa velocidade.
-                </p>
-                <br />
-                <p><strong>R$ 389,99</strong></p>
-                <div class="center">
-                  <i class="material-icons prefix blue-text">shopping_basket</i>
-                  <div class="input-field inline">
-                    <input type="number" class="center" step="1" id="qtd6" />
-                  </div>
-                </div>
-                <div class="card-action center">
-                  <a
-                    class="btn blue waves-effect waves-light"
-                    id="adicionar6"
-                    id="produto6"
-                    onclick="if (document.getElementById('qtd6').value == 0) {alert('Escolha uma quantidade!'); return;} else { AddCarrinho('HYPER 212 EVO', document.getElementById('qtd6').value, '389.99', 6 )}"
-                    >Comprar</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- FIM CARD -->
+              <!-- FIM MODAL POPUP EXCLUIR PRODUTO DO CARRINHO -->
+            </tbody>
+          </table>
+          <!-- FIM TABLE -->
         </div>
+        <!-- CARD FINALIZAR COMPRA -->
+        <div class="card-panel blue lighten-1">
+          <div class="row">
+            <div class="col s12 l6">
+              <div class="carrinho_final">
+                <!-- TIPO PAGAMENTO -->
+                <span class="flow-text black-text">Pagamento</span>
+                <select>
+                  <option value="1">À vista</option>
+                  <option value="2">À prazo</option>
+                </select>
+                <!-- FIM TIPO PAGAMENTO -->
+                <!-- DIAS À PRAZO -->
+                <span class="flow-text black-text">Dias</span>
+                <select>
+                  <option value="1">15 Dias</option>
+                  <option value="2">30 Dias</option>
+                </select>
+                <!-- FIM DIAS À PRAZO -->
+              </div>
+            </div>
+            <div class="col s12 l6">
+              <!-- SUB-TOTAL -->
+              <div class="cart_total" style="display: grid">
+                <span class="flow-text black-text">Sub-total</span>
+                <span
+                  class="flow-text"
+                  style="margin-block: 30px"
+                  id="total"
+                ></span>
+              </div>
+              <!-- FIM SUB-TOTAL -->
+              <!-- BOTOES FINALIZAR -->
+              <div class="card-action">
+                <a
+                  class="btn red right waves-effect waves-light"
+                  onclick="pedido()"
+                  >Fechar pedido</a
+                >
+              </div>
+              <!-- FIM BOTOES FINALIZAR -->
+            </div>
+          </div>
+        </div>
+        <!-- FIM CARD FINALIZAR COMPRA -->
       </div>
     </main>
     <!-- FIM MAIN -->
@@ -429,16 +273,16 @@
       //MENU MOBILE
       $(document).ready(function () {
         $(".sidenav").sidenav();
-        $(".carousel").carousel({
-          dist: 0,
-          padding: 0,
-          fullWidth: true,
-          indicators: true,
-          duration: 100,
-        });
-        setInterval(function () {
-          $("#carousel1").carousel("next");
-        }, 4500);
+      });
+
+      //SELECT
+      $(document).ready(function () {
+        $("select").formSelect();
+      });
+
+      //MODAL
+      $(document).ready(function () {
+        $(".modal").modal();
       });
     </script>
   </body>
