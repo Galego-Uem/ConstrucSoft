@@ -72,7 +72,7 @@
           style="text-align: left"
         >
           <div class="logo center">
-            <a id="logo-container" href="index.html"
+            <a id="logo-container" href="/"
               ><img src="./img/led2.png" style="height: 150px"
             /></a>
           </div>
@@ -206,13 +206,6 @@
           </div>
           <!-- CARD -->
           <div class="col s12 m4" th:each="produto : ${produtos}">
-            <input
-              type="hidden"
-              name="codProd"
-              id="codProd"
-              value="1"
-              th:value="${codProd}"
-            />
             <div class="card" style="height: 700px">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="responsive-img" src="./img/prod1.png" />
@@ -240,9 +233,8 @@
                   >
                   <a
                     id="delProd"
-                    href="#"
-                    class="btn white modal-trigger blue lighten-1 right"
-                    data-target="modal3"
+                    th:href="${(#mvc.url('PC#deletarProduto').arg(0, produto.id)).build()}"
+                    class="btn white blue lighten-1 right deletaProduto"
                     ><i class="material-icons red-text">delete</i></a
                   >
                 </div>
@@ -250,29 +242,6 @@
             </div>
           </div>
           <!-- FIM CARD -->
-          <!-- MODAL POPUP EXCLUIR PRODUTO DO CARRINHO -->
-          <div id="modal3" class="modal">
-            <div class="modal-content">
-              <h4>Excluir Produto</h4>
-              <p>Deseja mesmo excluir esse item?</p>
-            </div>
-            <div class="modal-footer">
-              <a
-                href="#!"
-                class="modal-close waves-effect waves-light btn red"
-                style="margin-right: 100px; width: 100px"
-                onclick="limpaCarrinho()"
-                >Excluir</a
-              >
-              <a
-                href="#!"
-                class="modal-close waves-effect waves-light btn blue"
-                style="width: 100px"
-                >Não</a
-              >
-            </div>
-          </div>
-          <!-- FIM MODAL POPUP EXCLUIR PRODUTO DO CARRINHO -->
         </div>
       </div>
     </main>
