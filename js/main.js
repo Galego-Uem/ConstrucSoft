@@ -1,12 +1,12 @@
 $("#btnAdd").hide();
 $("#logout").hide();
-$("#delProd").hide();
+$(".deletaProduto").hide();
 
-if (document.getElementById("#admin") == true) {
+if (document.getElementById("admin").value == "true") {
   $("#btnAdd").show();
   $("#logout").show();
   $("#login").hide();
-  $("#delProd").show();
+  $(".deletaProduto").show();
 }
 
 function limpaCarrinho() {
