@@ -1,36 +1,11 @@
-/**************************************** CARRINHO DE COMPRAS **********************************/
+$("#btnAdd").hide();
+$("#logout").hide();
 
-function AddCarrinho(produto, qtd, valor, posicao) {
-  localStorage.clear();
-  localStorage.setItem("produto" + posicao, produto);
-  localStorage.setItem("qtd" + posicao, qtd);
-  valor = valor * qtd;
-  localStorage.setItem("valor" + posicao, valor);
-  alert("Produto adicionado ao carrinho!");
-  window.location.href = "cart.html";
+if (document.getElementById("#admin") == true) {
+  $("#btnAdd").show();
+  $("#logout").show();
+  $("#login").hide();
 }
-
-var total = 0;
-var i = 0;
-var valor = 0;
-
-for (i = 1; i <= 99; i++) {
-  var prod = localStorage.getItem("produto" + i + "");
-  if (prod != null) {
-    document.getElementById("qntd_cart").innerHTML +=
-      localStorage.getItem("qtd" + i) + "x ";
-    document.getElementById("title_cart").innerHTML += localStorage.getItem(
-      "produto" + i
-    );
-    document.getElementById("qntd_cart").innerHTML += " ";
-    valor = parseFloat(localStorage.getItem("valor" + i));
-    document.getElementById("prc").innerHTML += "R$: " + valor.toFixed(2);
-
-    total = total + valor;
-  }
-}
-
-document.getElementById("total").innerHTML = total.toFixed(2);
 
 function limpaCarrinho() {
   document.getElementById("title_cart").innerHTML = "";
