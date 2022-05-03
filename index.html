@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
   <body>
+    <input type="hidden" name="admin" id="admin" th:value="${isAdmin}" />
     <!-- HEADER -->
     <header>
       <!-- TOP NAVBAR -->
@@ -80,30 +81,30 @@
               <div class="search-results"></div>
             </div>
           </li>
-          <li>
-            <a href="./user.html" class="black-text"
+          <li id="login">
+            <a href="/login" class="black-text"
               >Entrar<i class="material-icons blue-text">login</i></a
             >
           </li>
-          <li>
-            <a href="./user.html" class="black-text"
+          <li id="logout">
+            <a href="/logout" class="black-text"
               >Sair<i class="material-icons blue-text">logout</i></a
             >
           </li>
           <li class="active">
-            <a href="./index.html"
+            <a href="/"
               >Produtos<i class="material-icons blue-text">inventory_2</i></a
             >
           </li>
           <li>
-            <a href="./cart.html"
+            <a href="/carrinho"
               >Carrinho de Compras<i class="material-icons blue-text"
                 >shopping_cart</i
               ></a
             >
           </li>
           <li>
-            <a href="./about.html"
+            <a href="/sobre"
               >Sobre<i class="material-icons blue-text">timeline</i></a
             >
           </li>
@@ -140,6 +141,7 @@
           <a
             class="waves-effect waves-light btn modal-trigger green"
             href="#modal1"
+            id="btnAdd"
             >ADD Produto</a
           >
         </div>
@@ -148,18 +150,6 @@
           <div id="modal1" class="modal">
             <div class="modal-content">
               <form method="post">
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input
-                      id="codProd"
-                      name="codProd"
-                      type="text"
-                      class="validate"
-                      disabled
-                    />
-                    <label for="codProd">Codigo</label>
-                  </div>
-                </div>
                 <div class="row">
                   <div class="input-field col s12">
                     <input id="nome" name="nome" type="text" class="validate" />
