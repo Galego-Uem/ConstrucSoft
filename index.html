@@ -205,7 +205,7 @@
             </div>
           </div>
           <!-- CARD -->
-          <div class="col s12 m4">
+          <div class="col s12 m4" th:each="produto : ${produtos}">
             <div class="card" style="height: 700px">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="responsive-img" src="./img/prod1.png" />
@@ -214,14 +214,13 @@
                 <span
                   class="card-title activator grey-text text-darken-4 truncate"
                   id="title_card"
-                  >Acer Chromebook 515</span
-                >
-                <p>
-                  equipado com um processador1 Intel® Core™ i7 da 11a geração, o
-                  Acer Chromebook 515 e seu grande monitor Full HD de 15,6.
-                </p>
+                  th:text="${produto.nome}"
+                ></span>
                 <br />
-                <p><strong>R$ 1.700,00</strong></p>
+                <p>
+                  <strong><span th:text="${produto.preco}"></span></strong>
+                </p>
+                <span th:text="${produto.imagem}"></span>
                 <div class="center">
                   <i class="material-icons prefix blue-text">shopping_basket</i>
                   <div class="input-field inline">
@@ -237,11 +236,6 @@
             </div>
           </div>
           <!-- FIM CARD -->
-          <div th:each="produto : ${produtos}">
-            <span th:text="${produto.nome}"></span>
-            <span th:text="${produto.preco}"></span>
-            <span th:text="${produto.imagem}"></span>
-          </div>
         </div>
       </div>
     </main>
