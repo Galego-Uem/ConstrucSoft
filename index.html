@@ -162,12 +162,7 @@
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
-                    <input
-                      id="nome"
-                      name="nome"
-                      type="text"
-                      class="validate"
-                    />
+                    <input id="nome" name="nome" type="text" class="validate" />
                     <label for="nome">Produto:</label>
                   </div>
                 </div>
@@ -193,19 +188,19 @@
                     <label for="imagem">IMG:</label>
                   </div>
                 </div>
-            <div class="modal-footer">
-              <button
-                type="submit"
-                class="waves-effect waves-green btn-flat green"
-              >
-                ADD
-              </button>
-              <a
-                href="#!"
-                class="modal-close waves-effect waves-green btn-flat red"
-                >Fechar</a
-              >
-            </div>
+                <div class="modal-footer">
+                  <button
+                    type="submit"
+                    class="waves-effect waves-green btn-flat green"
+                  >
+                    ADD
+                  </button>
+                  <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn-flat red"
+                    >Fechar</a
+                  >
+                </div>
               </form>
             </div>
           </div>
@@ -242,6 +237,11 @@
             </div>
           </div>
           <!-- FIM CARD -->
+          <div th:each="produto : ${produtos}">
+            <span th:text="${produto.nome}"></span>
+            <span th:text="${produto.preco}"></span>
+            <span th:text="${produto.imagem}"></span>
+          </div>
         </div>
       </div>
     </main>
