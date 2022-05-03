@@ -208,22 +208,34 @@
           <div class="col s12 m4" th:each="produto : ${produtos}">
             <div class="card" style="height: 700px">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="responsive-img" src="./img/prod1.png" th:src="${produto.imagem}"/>
+                <img
+                  class="responsive-img"
+                  src="./img/prod1.png"
+                  th:src="${produto.imagem}"
+                  width="100px"
+                />
               </div>
-              <div class="card-content">
+              <div class="card-content" style="margin-top: 50px">
                 <span
                   class="card-title activator grey-text text-darken-4 truncate"
                   id="title_card"
                   th:text="${produto.nome}"
                 ></span>
                 <br />
-                <p>
-                  <strong><span th:text="${produto.preco}"></span></strong>
+                <p style="font-size: 25px">
+                  R$
+                  <strong><span th:text="${produto.preco}"></span>,00</strong>
                 </p>
                 <div class="center">
                   <i class="material-icons prefix blue-text">shopping_basket</i>
                   <div class="input-field inline">
-                    <input type="number" class="center" value="1" step="1" id="qtd1" />
+                    <input
+                      type="number"
+                      class="center"
+                      value="1"
+                      step="1"
+                      id="qtd1"
+                    />
                   </div>
                 </div>
                 <div class="card-action center">
