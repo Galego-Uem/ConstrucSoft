@@ -207,12 +207,19 @@
           <!-- CARD -->
           <div class="col s12 m4" th:each="produto : ${produtos}">
             <div class="card" style="height: 700px">
-              <div class="card-image waves-effect waves-block waves-light">
+              <div
+                class="card-image waves-effect waves-block waves-light"
+                style="
+                  width: 400px;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                "
+              >
                 <img
                   class="responsive-img"
                   src="./img/prod1.png"
                   th:src="${produto.imagem}"
-                  width="100px"
                 />
               </div>
               <div class="card-content" style="margin-top: 50px">
