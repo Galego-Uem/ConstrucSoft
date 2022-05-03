@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
   <body>
    <!-- HEADER -->
@@ -61,7 +63,7 @@
           style="text-align: left"
         >
           <div class="logo center">
-            <a id="logo-container" href="index.html"
+            <a id="logo-container" href="/"
               ><img src="./img/led2.png" style="height: 150px"
             /></a>
           </div>
@@ -86,7 +88,7 @@
             >
           </li>
           <li>
-            <a href="/index"
+            <a href="/"
               >Produtos<i class="material-icons blue-text">inventory_2</i></a
             >
           </li>
@@ -121,20 +123,20 @@
               </div>
               <div class="divider"></div>
               <div class="card-content">
-                <form>
+                <form method="post">
                   <div class="input-field">
                     <i class="material-icons prefix yellow-text"
                       >account_circle</i
                     >
-                    <label for="usuario" class="black-text">E-mail</label>
-                    <input type="text" id="usuario" />
+                    <label for="email" class="black-text">Usuário</label>
+                    <input type="text" name="email" id="email" />
                   </div>
                   <br />
 
                   <div class="input-field">
                     <i class="material-icons prefix yellow-text">lock</i>
                     <label for="senha" class='black-text'>Senha</label>
-                    <input type="password" id="senha" />
+                    <input type="password" name="senha" id="senha" />
                   </div>
                   <div class="input-field">
                     <i class="material-icons prefix yellow-text">lock</i>
@@ -144,13 +146,13 @@
                   <br />
 
                   <div class="input-field">
-                    <a
+                    <button
+                      type="submit"
                       class="btn-large blue darken-4 waves-effect waves-light"
                       style="width: 100%"
-                      onclick="Cadastro()"
                     >
                       Cadastrar
-                  </a>
+                    </button>
                   </div>
 
                   <div class="row">
@@ -211,7 +213,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
     <script>
       //MENU MOBILE
