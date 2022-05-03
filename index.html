@@ -206,6 +206,13 @@
           </div>
           <!-- CARD -->
           <div class="col s12 m4" th:each="produto : ${produtos}">
+            <input
+              type="hidden"
+              name="codProd"
+              id="codProd"
+              value="1"
+              th:value="${codProd}"
+            />
             <div class="card" style="height: 700px">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="responsive-img" src="./img/prod1.png" />
