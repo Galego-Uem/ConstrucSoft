@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
   </head>
   <body>
+    <input type="hidden" name="admin" id="admin" th:value="${isAdmin}" />
     <!-- HEADER -->
     <header>
       <!-- TOP NAVBAR -->
@@ -80,30 +81,30 @@
               <div class="search-results"></div>
             </div>
           </li>
-          <li>
-            <a href="./user.html" class="black-text"
+          <li id="login">
+            <a href="/login" class="black-text"
               >Entrar<i class="material-icons blue-text">login</i></a
             >
           </li>
-          <li>
-            <a href="./user.html" class="black-text"
+          <li id="logout">
+            <a href="/logout" class="black-text"
               >Sair<i class="material-icons blue-text">logout</i></a
             >
           </li>
           <li>
-            <a href="./index.html"
+            <a href="/index"
               >Produtos<i class="material-icons blue-text">inventory_2</i></a
             >
           </li>
           <li class="active">
-            <a href="./cart.html"
+            <a href="/"
               >Carrinho de Compras<i class="material-icons blue-text"
                 >shopping_cart</i
               ></a
             >
           </li>
           <li>
-            <a href="./about.html"
+            <a href="/sobre"
               >Sobre<i class="material-icons blue-text">timeline</i></a
             >
           </li>
